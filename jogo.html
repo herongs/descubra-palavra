@@ -9,6 +9,60 @@
     <title>Jogo</title>
 </head>
 <body>
-    
+    <div class="container">
+
+        <div class="row">
+            <div class="col-sm-12">
+                <h1>Jogo "Descubra a Palavra"</h1>
+                <hr>
+                <a href="./index.html" class="btn btn-primary">Cadastrar Palavra</a>
+                <a href="./lista.html" class="btn btn-success">Listar Palavras</a>
+                <a href="./jogo.html" class="btn btn-danger">Iniciar Jogo</a>
+                <br>
+                <br>
+                <div class="row margemJogo">
+                    <div class="col-sm-4 corFundo">
+                        <h2 class="aDireita">
+                            <label for="inLetra">Informa a letra:</label>
+                        </h2>
+                    </div>
+                    <div class="col-sm-2 corFundo">
+                        <input type="button" class="form-control margemJogo"
+                            id="inLetra" autofocus>
+
+                    </div>
+                    <div class="col-sm-6 corFundo">
+                        <input type="button" class="btn btn-primary margemJogo"
+                            value="Jogar" id="btJogar">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-8">
+                        <h2>
+                            Palavra:
+                            <span id="outPalavra" class="entreLetra" fonteAzul></span>
+                        </h2>
+                        <h2>
+                            Nº Chances:
+                            <span id="outChances" class="fonteVermelho">4</span>
+                        </h2>
+                        <h2>
+                            Erros:
+                            <span id="outErros" class="entreLetras fonteVermelho"></span>
+                        </h2>
+                        <h2 id="outMensagemFinal"></h2>
+                    </div>
+                    <div class="col-sm-4 bordaQuadro">
+                        <h3>Situação do Jogador</h3>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
 </body>
 </html>

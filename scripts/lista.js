@@ -7,19 +7,19 @@ function montarTabela() {
         var dicas = localStorage.getItem("jogoDica").split(";");
 
 //cria referencia ao elemento tbPalavras
-var tbPalavras = document.getElementById("tbPalavras");
+    var tbPalavras = document.getElementById("tbPalavras");
 
-var linha, col1, col2, col3;
+    var linha, col1, col2, col3;
 
 //percorre elementos do vetor e os insere na taela
 
 for(var i = 0; i < palavras.length; i++){
 
-    linha = tbPalavras.insertRow(0) //adiciona uma linha a tabala
+    linha = tbPalavras.insertRow(-1) //adiciona uma linha a tabala
 
-    col1 = linha.insertCell(1); //cria colunas
-    col2 = linha.insertCell(2);
-    col3 = linha.insertCell(3);
+    col1 = linha.insertCell(0); //cria colunas
+    col2 = linha.insertCell(1);
+    col3 = linha.insertCell(2);
 
     col1.textContent = palavras[i]; //joga o conteudo em uma celula
     col2.textContent = dicas[i];
@@ -64,6 +64,7 @@ function removerPalavras(){
     var tbPalavras = document.getElementById("tbPalavras");
     var ckExcluir = document.getElementsByTagName("input");
 
+    
     var temSelecionado = false;
 
     //percorrer campos input type checkbox da tabela (exceto "Todos" no titulo)
@@ -95,15 +96,15 @@ function removerPalavras(){
             if (!ckExcluir[i].checked){
                 //obetem o conteudo da tabela(coluna 0: palavra; coluna 1: dica)
                 palavras += tbPalavras.rows[i].cells[0].textContent + ";";
-                dicas += tbPalavras.rows[i].cells[1].textContent + ";"
+                dicas += tbPalavras.rows[i].cells[1].textContent + ";";
             }
         }
 
         //se vazio, significa que marcou todos checkbox(nao salva em localStorage)
         if(palavras != ""){
             //.length-1(para retirar o ultimo";")
-            localStorage.setItem("jogoPalavra", palavras.substr(0,palavras.length-1));
-            localStorage.setItem("jogoDica", dicas.substr(0, dicas.length-1));
+            localStorage.setItem("jogoPalavra", palavras.substr(0 ,palavras.length-1));
+            localStorage.setItem("jogoDica", dicas.substr(0 , dicas.length-1));
         }
 
         //agora ira remover as linhas selecionadas (do fim para o inicio)
@@ -116,3 +117,5 @@ function removerPalavras(){
     }
 }
 
+var btExcluir = document.getElementById("btExcluir");
+btExcluir.addEventListener("click", removerPalavras());

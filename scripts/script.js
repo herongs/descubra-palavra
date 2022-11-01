@@ -9,7 +9,7 @@ function cadastrarPalavra() {
 
     //validar preeenchimento(palavra sem espaço em branco)
 
-    if(palavra == " " || dica == " " || palavra.indexOf(" ") >= 0 || dica.indexOf(" ") >= 0){
+    if(palavra == " " || dica == " " || palavra.indexOf(" ") >= 0){
         alert("Informe uma palavra válida(sem espaços) e sua dica correspondente")
         inPalavra.focus()
         return;
@@ -23,13 +23,13 @@ function cadastrarPalavra() {
         localStorage.setItem("jogoDica", localStorage.getItem("jogoDica") + ";" + dica);
     } else{
         //se nao, é a primeira inclusao: grava apenas a palavra e dica
-        localStorage.getItem("jogoPalavra", palavra);
-        localStorage.getItem("jogoDica", dica);
+        localStorage.setItem("jogoPalavra", palavra);
+        localStorage.setItem("jogoDica", dica);
     }
 
     //verifica se salvou
     if(localStorage.getItem("jogoPalavra")){
-        alert("OK! Palavra" + palavra + "Cadastrada com sucesso");
+        alert("OK! Palavra " + palavra + " Cadastrada com sucesso");
     }
 
     inPalavra.value = ""; //limpa campos de edição
@@ -38,7 +38,7 @@ function cadastrarPalavra() {
 
 }
 
-    var btCadastrar = document.getElementById("btCadastrar");
-    btCadastrar.addEventListener("click", cadastrarPalavra);
+var btCadastrar = document.getElementById("btCadastrar");
+btCadastrar.addEventListener("click", cadastrarPalavra);
 
 
