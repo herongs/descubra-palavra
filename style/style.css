@@ -1,0 +1,27 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.entreLetra{
+    padding: 15px;
+
+}
+
+.fonteVermelho{
+    color: red;
+}
+
+.fonteAzul{
+    color: blue;
+}
+
+.outDica{
+    font-size: 15px;
+
+}
+
+#imgStatus{
+    width: 300px;
+}
+
+

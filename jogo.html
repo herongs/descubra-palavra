@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style/style.css">
     <title>Jogo</title>
 </head>
 <body>
@@ -20,16 +20,15 @@
                 <a href="./jogo.html" class="btn btn-danger">Iniciar Jogo</a>
                 <br>
                 <br>
-                <div class="row margemJogo">
-                    <div class="col-sm-4 corFundo">
+                <div class="row margemJogo bg-light p-3">
+                    <div class="col-sm-4 " >
                         <h2 class="aDireita">
                             <label for="inLetra">Informa a letra:</label>
                         </h2>
                     </div>
                     <div class="col-sm-2 corFundo">
-                        <input type="texto" maxlength="1" class="form-control margemJogo"
+                        <input type="texto"  class="form-control margemJogo"
                             id="inLetra" autofocus>
-
                     </div>
                     <div class="col-sm-6 corFundo">
                         <input type="button" class="btn btn-primary margemJogo"
@@ -40,7 +39,7 @@
                     <div class="col-sm-8">
                         <h2>
                             Palavra:
-                            <span id="outPalavra" class="entreLetra" fonteAzul></span>
+                            <span id="outPalavra" class="entreLetra fonteAzul" ></span>
                         </h2>
                         <h2>
                             Nº Chances:
@@ -54,11 +53,11 @@
                     </div>
                     <div class="col-sm-4 bordaQuadro">
                         <h3>Situação do Jogador</h3>
-                        <img src="img/status4.jpg" alt="Situação do Jogador">
+                        <img src="img/status4.PNG" alt="Situação do Jogador" id="imgStatus">
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-sm-12 corFundo margemDica">
+                    <div class="col-sm-12 margemDica bg-light p-3">
                         <input type="buttom" value="Ver Dica" id="btVerDica" class="btn btn-primary">
                         <span id="outDica">* Custo: 1 chance</span>
                     </div>

@@ -93,7 +93,7 @@ function removerPalavras(){
         //primeiro ira gravar em localStorage as palavras nao selecionadas
         for (i = 1; i < ckExcluir.length; i++){
             //senao esta selecionado(para exclusao)
-            if (!ckExcluir[i].checked){
+            if (ckExcluir[i].checked){
                 //obetem o conteudo da tabela(coluna 0: palavra; coluna 1: dica)
                 palavras += tbPalavras.rows[i].cells[0].textContent + ";";
                 dicas += tbPalavras.rows[i].cells[1].textContent + ";";
@@ -109,13 +109,16 @@ function removerPalavras(){
 
         //agora ira remover as linhas selecionadas (do fim para o inicio)
         for ( i = ckExcluir.length - 1; i > 0 ; i--){
-            if(ckExcluir[i].checked){
+            if(!ckExcluir[i].checked){
                 tbPalavras.deleteRow(i) //remove linha
             }
         }
         ckExcluir[0].checked = false;  //desmarca ckTodos(que é o input 0)
+
+        Location.reload();
     }
 }
 
 var btExcluir = document.getElementById("btExcluir");
 btExcluir.addEventListener("click", removerPalavras);
+
