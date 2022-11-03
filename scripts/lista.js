@@ -52,8 +52,7 @@ ckTodos.addEventListener("change", function(){
     var status = ckTodos.checked; //obtem o status;
 
     //e percorre os demais checkbox para aplicar esse status
-
-    for(var i = 1; i < ckExcluir.length;i++){
+    for(var i = 1; i < ckExcluir.length ; i++){
         ckExcluir[i].checked = status;
     }
 
@@ -63,6 +62,7 @@ function removerPalavras(){
     //cria referencia a tabela e aos campos input(filgos da tabela)
     var tbPalavras = document.getElementById("tbPalavras");
     var ckExcluir = document.getElementsByTagName("input");
+    //var palavras = localStorage.getItem("jogoPalavra");
 
     
     var temSelecionado = false;
@@ -103,12 +103,12 @@ function removerPalavras(){
         //se vazio, significa que marcou todos checkbox(nao salva em localStorage)
         if(palavras != ""){
             //.length-1(para retirar o ultimo";")
-            localStorage.setItem("jogoPalavra", palavras.substr(0 ,palavras.length-1));
-            localStorage.setItem("jogoDica", dicas.substr(0 , dicas.length-1));
+            localStorage.setItem("jogoPalavra", palavras.substr(0 , palavras.length - 1));
+            localStorage.setItem("jogoDica", dicas.substr(0 , dicas.length - 1));
         }
 
         //agora ira remover as linhas selecionadas (do fim para o inicio)
-        for (i = ckExcluir.length - 1; i > 0 ; i--){
+        for ( i = ckExcluir.length - 1; i > 0 ; i--){
             if(ckExcluir[i].checked){
                 tbPalavras.deleteRow(i) //remove linha
             }
@@ -118,4 +118,4 @@ function removerPalavras(){
 }
 
 var btExcluir = document.getElementById("btExcluir");
-btExcluir.addEventListener("click", removerPalavras());
+btExcluir.addEventListener("click", removerPalavras);

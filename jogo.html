@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27,7 +27,7 @@
                         </h2>
                     </div>
                     <div class="col-sm-2 corFundo">
-                        <input type="button" class="form-control margemJogo"
+                        <input type="texto" maxlength="1" class="form-control margemJogo"
                             id="inLetra" autofocus>
 
                     </div>
@@ -54,8 +54,14 @@
                     </div>
                     <div class="col-sm-4 bordaQuadro">
                         <h3>Situação do Jogador</h3>
+                        <img src="img/status4.jpg" alt="Situação do Jogador">
                     </div>
-
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 corFundo margemDica">
+                        <input type="buttom" value="Ver Dica" id="btVerDica" class="btn btn-primary">
+                        <span id="outDica">* Custo: 1 chance</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -63,6 +69,6 @@
 
 
 
-
+    <script src="./scripts/jogo.js"></script>
 </body>
 </html>
